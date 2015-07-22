@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Foxes</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Color</th>
+    <th>Tail</th>
+    <th>Ma właściciela?</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @foxes.each do |fox| %>
+      <tr>
+        <td><%= fox.name %></td>
+        <td><%= fox.age %></td>
+        <td><%= fox.color %></td>
+        <td><%= fox.tail %></td>
+        <td><% if fox.user %>
+              <%= fox.user %>
+          <% else %>
+              <%= link_to "Adoptuj", adopt_fox_path(fox),method: :post %>
+          <% end %></td>
+        <td><%= link_to 'Show', fox %></td>
+        <td><%= link_to 'Edit', edit_fox_path(fox) %></td>
+        <td><%= link_to 'Osieroć', fox, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fox', new_fox_path %> |
+<%= link_to 'Wszystkie', foxes_path %>

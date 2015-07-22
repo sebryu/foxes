@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>User:</strong>
+  <%= @fox.user %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @fox.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @fox.age %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @fox.color %>
+</p>
+
+<p>
+  <strong>Tail:</strong>
+  <%= @fox.tail %>
+</p>
+<p>
+  <strong>Stworzony:</strong>
+  <%= @fox.created_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_fox_path(@fox) %> |
+<%= link_to 'Back', foxes_path %>
